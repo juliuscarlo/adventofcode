@@ -45,4 +45,21 @@ answer = find_largest_product()
 print(answer)
 
 
+# Part 2
 
+def find_my_seat():
+    data = import_data()
+    row_numbers = convert_row_data(data)
+    column_numbers = convert_col_data(data)
+    seat_ids = [a * 8 + b for a, b in zip(row_numbers, column_numbers)]
+    seat_ids.sort()
+    print(seat_ids)
+    for seat in range(max(seat_ids) - min(seat_ids) - 1):
+        if (seat_ids[seat] + seat_ids[seat + 1]) % 2 == 0:
+            left_neighbor = seat_ids[seat]
+    my_seat_id = left_neighbor + 1
+    return my_seat_id
+
+
+answer_2 = find_my_seat()
+print(answer_2)
