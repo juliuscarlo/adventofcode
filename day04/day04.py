@@ -23,6 +23,7 @@ def read_input(file):
 
 passports = read_input(file=file)
 
+
 def all_fields_valid(passport_data):
     """ Returns True if all fields are valid"""
     valid = True
@@ -71,8 +72,6 @@ def all_fields_valid(passport_data):
     return valid
 
 
-
-
 def count_valid_passports(passports=passports):
     count = 0
     for passport in range(len(passports.items())):
@@ -98,6 +97,4 @@ def count_valid_passports(passports=passports):
 answer = count_valid_passports(passports)
 print(answer)
 
-
 # part 2
-
